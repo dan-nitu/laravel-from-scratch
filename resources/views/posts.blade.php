@@ -4,7 +4,8 @@
     <article>
         <h1>
             <a href="/posts/{{ $post->id }}">
-                {{ $post->title }}
+                {!! $post->title !!}
+                {{-- {!! html escape !!} --}}
             </a>
         </h1>
 
