@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    Illuminate\Support\Facades\DB::listen(function ($query) {
+        logger($query->sql, $query->bindings);
+        // storage/logs/laravel.logs
+    });
+
     return view('posts', [
         'posts' => Post::all()
     ]);
