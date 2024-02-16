@@ -21,7 +21,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('posts/{post}', function (Post $post) {
+Route::get('posts/{post:slug}', function (Post $post) { // Post::where('slug', $post)->firstOrFail()
     return view('post', [
         'post' => $post
     ]);
