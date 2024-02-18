@@ -16,6 +16,9 @@ class Post extends Model
     // protected $guarded = [];
     // v3) !!! disable mass asignment restriction
 
+    protected $with = ['category', 'author'];
+    // include relationships (category and author) in the fetch to reduce the querries number
+
     public function category()
     {
         // hasOne, hasMany, belongsTo, belongsToMany
